@@ -1,0 +1,35 @@
+<article class="card">
+
+    <div class="content-cards">
+        <div class="content-image">
+            <img
+            *ngIf="result.artworkUrl100"
+            [src]="result.artworkUrl100"
+
+            class="card-origin"
+            
+            >
+            <img
+                *ngIf="!result.artworkUrl100"
+                class="card-alternative"
+                src="assets/images/not_found.jpg"
+            >
+        </div>
+    
+        <div class="content-details-grid">
+            <div class="content-tittle-album">
+                <p  *ngIf="result.artistName">
+                    <b>{{ result.artistName }}</b>
+                </p>
+                <p  *ngIf="result.collectionName">
+                    {{ result.collectionName }}
+                </p>
+                
+            </div>
+            <div class="content-details-price">
+                <p *ngIf="result.collectionPrice"><b>Price</b></p>
+                <p *ngIf="result.collectionPrice"> {{ result.collectionPrice }} {{ result.currency }}</p>
+            </div>
+        </div>
+    </div>
+</article>

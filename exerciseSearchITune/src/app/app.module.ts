@@ -13,10 +13,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { CardResultComponent } from './components/card-result/card-result.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ITuneSearchComponent
+    ITuneSearchComponent,
+    CardResultComponent
   ],
   imports: [
     BrowserModule,

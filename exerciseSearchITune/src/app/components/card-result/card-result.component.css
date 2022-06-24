@@ -1,0 +1,54 @@
+body{
+    margin:0 auto;
+    padding:0;
+}
+.card{
+
+    height: 100%;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all 400ms ease-out;
+    border-radius: 15px;
+
+    
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+    transform: translateY(-3%);
+}
+.content-cards{
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;    
+}
+.content-image{
+    height: 70%;
+    width: 70%;
+    padding: 16px 0;
+}
+img {
+    height:180px;
+    width: 180px;
+    object-fit: cover;
+}
+
+.content-details-grid{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    width: 70%;
+}
+
+.content-tittle-album{
+    height: 100%;
+    width: 120px;
+}
+
+.content-details-price > p{
+    text-align: right;
+}
