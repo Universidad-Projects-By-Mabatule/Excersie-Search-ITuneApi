@@ -29,7 +29,7 @@ export class ITuneSearchComponent implements OnInit {
     //this.iTunesSerch();
   }
   public iTunesSerch(){
-    this.iTuneService.getResultsITunes(this.formITune.value.searchInput,"musicArtist").pipe(
+    this.iTuneService.getResultsITunes(this.formITune.value.searchInput,this.formITune.value.selectMediaType).pipe(
           takeUntil(this.unsubscribe)
         ).subscribe(res => {
             this.results = res.results;
