@@ -16,16 +16,9 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Select type</mat-label>
                     <mat-select formControlName="selectMediaType">
-                        <mat-option value="All">All</mat-option>
-                        <mat-option value="tvShow">tvShow</mat-option>
-                        <mat-option value="software">software</mat-option>
-                        <mat-option value="shortFilm">shortFilm</mat-option>
-                        <mat-option value="audiobook">audiobook</mat-option>
-                        <mat-option value="musicVideo">musicVideo</mat-option>
-                        <mat-option value="musicArtist">music</mat-option>
-                        <mat-option value="podcast">podcast</mat-option>
-                        <mat-option value="movie">movie</mat-option>
-
+                        <mat-option *ngFor="let media of mediaType" [value]="media.value">
+                            {{media.viewValue}}
+                        </mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
