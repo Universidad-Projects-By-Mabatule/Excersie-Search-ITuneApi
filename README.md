@@ -3,7 +3,8 @@
 The exercise was generated with Angular CLI and Angular Material was implemented. The task consists of consuming the iTunes Search API and displaying the search results it provides.
 
 
-![image]([https://github.com/ZhengYaWei1992/ZWProgressView/blob/master/Untitled3.gif](https://github.com/mabatule1999/Tx-Excersie_Internship_Search/blob/develop/exerciseSearchITune/src/assets/images/presenter.gif))
+![Alt Text](https://github.com/mabatule1999/Tx-Excersie_Internship_Search/blob/develop/exerciseSearchITune/src/assets/images/presenter.gif)
+
 
 ## Notes
 It was taken into account that in the search examples there are several 'terms' and the most favorable and significant for the key was selected. 
