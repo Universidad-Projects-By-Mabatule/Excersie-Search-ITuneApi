@@ -1,0 +1,22 @@
+.content-search{
+    display: flex;
+    justify-content: center;
+}
+.content-tittle,.not_result_found{
+    text-align: center;
+}
+.content-search-inputs{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.content-inputs{
+    border-radius: 20px;
+}
+
+.img-not-results{
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    display: none;
+}

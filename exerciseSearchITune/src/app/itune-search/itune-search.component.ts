@@ -1,4 +1,4 @@
-import { Component, OnInit,ChangeDetectorRef,ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef,ChangeDetectionStrategy,ViewChild,ElementRef,Renderer2} from '@angular/core';
 import { ITuneApiService } from '../services/itune-api.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -14,6 +14,7 @@ import { IModelMediaType } from '../interfaces/imodel-media-type';
 })
 export class ITuneSearchComponent implements OnInit {
   
+  @ViewChild('asImageNotResult') imgNotResults!: ElementRef
 
   public results: Array<IModelResultValues> = [];
   private unsubscribe: Subject<any> = new Subject<any>();
@@ -31,7 +32,7 @@ export class ITuneSearchComponent implements OnInit {
     {value: 'movie'       , viewValue: 'movie'}
   ];
 
-  constructor(private iTuneService:ITuneApiService,private cdRef: ChangeDetectorRef,private formBuilder:FormBuilder) { }
+  constructor(private iTuneService:ITuneApiService,private cdRef: ChangeDetectorRef,private formBuilder:FormBuilder, private renderer2:Renderer2) { }
 
   public ngOnInit(): void {
     this.formITune = this.formBuilder.group( {
@@ -41,15 +42,17 @@ export class ITuneSearchComponent implements OnInit {
 
     //this.iTunesSerch();
   }
+  public changeImg(flag:boolean): void{
+    const asImg= this.imgNotResults.nativeElement;
+    this.renderer2.setAttribute(asImg,'src',flag?'assets/images/not_results.gif':'')
+  }
   public iTunesSerch(){
     this.iTuneService.getResultsITunes(this.formITune.value.searchInput,this.formITune.value.selectMediaType).pipe(
           takeUntil(this.unsubscribe)
         ).subscribe(res => {
-            this.results = res.results;
-            console.log(this.results);
-
-
-            this.cdRef.detectChanges();
+          this.results = res.results;
+          this.results.length==0 ? this.changeImg(true): this.changeImg(false);
+          this.cdRef.detectChanges();
           });
   }
 }
