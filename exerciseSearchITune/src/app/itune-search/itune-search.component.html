@@ -40,7 +40,7 @@
 <div class="contend-cards">
     <section class="result-grid">
         <ng-container *ngFor="let result of results">
-            <h1>{{result.artistName}}</h1>
+            <app-card-result [result]="result"></app-card-result>
         </ng-container>
     </section>
 </div>

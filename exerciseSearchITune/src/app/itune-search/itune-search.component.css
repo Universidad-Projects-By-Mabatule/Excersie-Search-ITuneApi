@@ -20,3 +20,16 @@
     margin: 0 auto;
     display: none;
 }
+.result-grid{
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+
+    align-items: stretch;
+    margin: auto;
+}
+app-card-result{
+    margin-bottom: 20px;
+}
