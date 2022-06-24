@@ -42,5 +42,7 @@ To search for all Jim Jones audio and video content and return only the results 
 To search for applications titled “Yelp” and return only the results from the United States iTunes Store, use the following URL: 
       https://itunes.apple.com/search?term=yelp&country=us&entity=software.
       
-### Comando para Ejecutar el Proyecto desde consola
+### Project installation
+      npm install      
+### Command to Execute the Project from console
       ng serve
