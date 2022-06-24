@@ -1,0 +1,46 @@
+<div class="content-tittle">
+    <h1>Welcome to the ITunes browser</h1>
+    <p>The Search API allows you to place search fields in your website to search for content within the iTunes Store, App Store, iBooks Store and Mac App Store.</p>
+</div>
+
+<div class="content-search">
+    <form  [formGroup]="formITune" (submit)="iTunesSerch()">
+        <div class="content-search-inputs">
+
+            <div class="content-inputs">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Michael Jackson"  id="searchInput" formControlName ="searchInput">
+                </mat-form-field>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select type</mat-label>
+                    <mat-select formControlName="selectMediaType">
+                        <mat-option *ngFor="let media of mediaType" [value]="media.value">
+                            {{media.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            
+            <div class="content-btn-search">
+                <button mat-raised-button color="primary">Search iTunes</button>
+            </div>
+
+            <div class="not_result_found">
+                <img
+                #asImageNotResult
+                >
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="contend-cards">
+    <section class="result-grid">
+        <ng-container *ngFor="let result of results">
+            <app-card-result [result]="result"></app-card-result>
+        </ng-container>
+    </section>
+</div>
