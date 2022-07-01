@@ -1,4 +1,4 @@
-# Tx-Excersie_Internship_Search in Angular
+# Excersie-Search-ITuneApi
 ## Resume
 The exercise was generated with Angular CLI and Angular Material was implemented. The task consists of consuming the iTunes Search API and displaying the search results it provides.
 
